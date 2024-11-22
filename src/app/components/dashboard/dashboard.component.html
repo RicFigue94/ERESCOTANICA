@@ -1,0 +1,23 @@
+<div class="dashboard-container">
+    <h2>Estado del Huerto</h2>
+    
+    <div class="plant-status-list">
+      <div class="plant-status" *ngFor="let plant of plantStatuses">
+        <h3>{{ plant.name }}</h3>
+        <p>Estado: <span [ngClass]="{'healthy': plant.status === 'Saludable', 'unhealthy': plant.status === 'Enfermo'}">{{ plant.status }}</span></p>
+      </div>
+    </div>
+    
+    <div class="charts-container">
+      <div class="chart" id="humidity-chart">Humedad: {{ chartData.humidity }}%</div>
+      <div class="chart" id="light-chart">Luz Solar: {{ chartData.light }}%</div>
+      <div class="chart" id="temperature-chart">Temperatura: {{ chartData.temperature }}°C</div>
+    </div>
+    
+    <div class="button-container">
+      <button (click)="redirectToRegister()">Registrar Planta</button>
+      <button (click)="redirectToMonitoring()">Monitoreo en Tiempo Real</button>
+      <button (click)="redirectToCentralPanel()">Panel Central</button>
+    </div>
+  </div>
+  

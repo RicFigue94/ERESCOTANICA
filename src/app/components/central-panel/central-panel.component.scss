@@ -1,0 +1,172 @@
+.central-panel-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f7f9fc;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      
+      .user-info {
+        display: flex;
+        align-items: center;
+        
+        .user-icon {
+          font-size: 36px; // Tamaño del icono de usuario
+          margin-right: 10px; // Espacio entre icono y texto
+        }
+  
+        .user-details {
+          font-family: 'Roboto', sans-serif;
+          font-size: 14px; // Tamaño del texto del usuario
+          color: #333;
+          
+          span {
+            display: block; // Muestra nombre y ID en líneas separadas
+          }
+        }
+      }
+  
+      .notifications {
+        position: relative;
+        cursor: pointer;
+        margin-left: auto; // Mueve la campana a la derecha
+        align-items: center; // Alinear verticalmente con el ícono del usuario
+        display: flex; // Cambiar a flex para el posicionamiento adecuado
+  
+        .bell-icon {
+          font-size: 24px;
+          margin-left: 10px; // Añadir margen para separarla del texto
+        }
+  
+        .notification-count {
+          position: absolute;
+          top: -5px;
+          right: -10px;
+          background: red;
+          color: white;
+          border-radius: 50%;
+          padding: 2px 6px;
+          font-size: 12px;
+        }
+      }
+    }
+    .end-session-container {
+      position: fixed; /* Fijar en la parte inferior de la pantalla */
+      bottom: 20px; /* Distancia desde la parte inferior */
+      left: 50%; /* Centrar horizontalmente */
+      transform: translateX(-50%); /* Ajustar para que esté centrado */
+      background-color: #f7f9fc; /* Fondo ligero para el botón */
+      padding: 10px;
+      border-radius: 8px; /* Bordes redondeados */
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      
+      button {
+        display: flex; /* Flex para alinear icono y texto */
+        align-items: center; /* Centrar verticalmente */
+        background-color: #a7c957; /* Verde Claro */
+        color: white;
+        padding: 12px 20px;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: background-color 0.3s, transform 0.2s;
+    
+        &:hover {
+          background-color: #4c9f70; /* Verde oscuro al pasar el mouse */
+          transform: scale(1.05);
+        }
+    
+        .icon {
+          margin-right: 8px; /* Espacio entre el ícono y el texto */
+        }
+      }
+    }
+    .navigation {
+      display: flex;
+      gap: 10px;
+      margin: 20px 0;
+  
+      button {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: #a7c957; // Verde Claro
+        color: white;
+        padding: 12px 10px;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: background-color 0.3s, transform 0.2s;
+  
+        &:hover {
+          background-color: #4c9f70; // Verde oscuro al pasar el mouse
+          transform: scale(1.05);
+        }
+  
+        .icon {
+          font-size: 28px; // Tamaño del icono
+        }
+  
+        .label {
+          font-size: 12px; // Tamaño del texto
+        }
+      }
+  
+      .home-button {
+        font-size: 36px; // Icono de inicio más grande
+      }
+    }
+  
+    .content {
+      text-align: center;
+  
+      h2 {
+        font-family: 'Cabin', sans-serif;
+        color: #333;
+        font-size: 20px; // Tamaño de fuente para encabezados
+      }
+  
+      p {
+        color: #777;
+        font-size: 14px;
+      }
+    }
+  }
+  
+  /* Media queries para dispositivos móviles */
+  @media (max-width: 480px) {
+    .central-panel-container {
+      padding: 15px;
+      border-radius: 10px;
+  
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+  
+        h1 {
+          font-size: 20px; // Tamaño de fuente para encabezados
+        }
+      }
+  
+      .navigation {
+        flex-direction: column;
+  
+        button {
+          width: 100%; // Botones a ancho completo
+          margin-bottom: 10px;
+        }
+      }
+    }
+  }
+  

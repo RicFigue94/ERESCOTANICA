@@ -1,0 +1,45 @@
+<div class="central-panel-container">
+  <header>
+    <div class="user-info">
+      <div class="user-icon">👤</div> <!-- Icono de usuario -->
+      <div class="user-details">
+        <span>{{ user.name }}</span> <!-- Nombre del usuario -->
+        <span>ID: {{ user.id }}</span> <!-- ID del usuario -->
+      </div>
+    </div>
+    <div class="end-session-container">
+      <button (click)="logout()">
+        <span class="icon">🚪</span> <!-- Icono de puerta cerrada -->
+        <span class="label">Cerrar Sesión</span>
+      </button>
+    </div>
+    <div class="notifications" (click)="navigateToNotifications()">
+      <span class="bell-icon">🔔</span>
+      <span class="notification-count">3</span> <!-- Cambia este número según la lógica -->
+    </div>
+  </header>
+
+  <nav class="navigation">
+    <button (click)="navigateToMonitoring()">
+      <span class="icon">🔍</span>
+      <span class="label">Monitoreo</span>
+    </button>
+    <button (click)="navigateToRegisterPlants()">
+      <span class="icon">🌱</span>
+      <span class="label">Registrar Plantas</span>
+    </button>
+    <button (click)="navigateToEducation()">
+      <span class="icon">📚</span>
+      <span class="label">Educación</span>
+    </button>
+    <button (click)="navigateToCommunity()" class="home-button">
+      <span class="icon">👥</span>
+      <span class="label">Comunidad</span>
+    </button>
+  </nav>
+
+  <div class="content">
+    <h2>Bienvenido al panel central</h2>
+    <p>Selecciona una opción de navegación para comenzar.</p>
+  </div>
+</div>

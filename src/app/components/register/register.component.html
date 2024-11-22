@@ -1,0 +1,52 @@
+<div class="register-container">
+    <h2>Registro de Usuario</h2>
+    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+      <div>
+        <label for="email">Correo Electrónico:</label>
+        <input
+          id="email"
+          formControlName="email"
+          type="email"
+          placeholder="Introduce tu correo"
+        />
+        <div *ngIf="registerForm.get('email')?.invalid && registerForm.get('email')?.touched" class="error">
+          Correo electrónico inválido.
+        </div>
+      </div>
+      <div>
+        <label for="password">Contraseña:</label>
+        <div class="password-container">
+          <input
+            id="password"
+            formControlName="password"
+            [type]="passwordVisible ? 'text' : 'password'"
+            placeholder="Introduce tu contraseña"
+          />
+          <button type="button" (click)="togglePasswordVisibility()">👁️</button>
+        </div>
+        <div *ngIf="registerForm.get('password')?.invalid && registerForm.get('password')?.touched" class="error">
+          La contraseña debe tener al menos 8 caracteres, con al menos una letra y un número.
+        </div>
+      </div>
+      <div>
+        <label for="confirmPassword">Confirmar Contraseña:</label>
+        <div class="password-container">
+          <input
+            id="confirmPassword"
+            formControlName="confirmPassword"
+            [type]="confirmPasswordVisible ? 'text' : 'password'"
+            placeholder="Confirma tu contraseña"
+          />
+          <button type="button" (click)="toggleConfirmPasswordVisibility()">👁️</button>
+        </div>
+        <div *ngIf="registerForm.get('confirmPassword')?.touched && registerForm.get('password')?.value !== registerForm.get('confirmPassword')?.value" class="error">
+          Las contraseñas no coinciden.
+        </div>
+      </div>
+      <button type="submit" [disabled]="registerForm.invalid">Registrarse</button>
+      <div class="login-link">
+        <p>¿Ya tienes cuenta? <a routerLink="/login">Inicia sesión aquí</a></p>
+      </div>
+    </form>
+  </div>
+  

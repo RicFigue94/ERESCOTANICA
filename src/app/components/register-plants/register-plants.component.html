@@ -1,0 +1,43 @@
+<div class="register-plants-container">
+    <h2>Registro de Huerto</h2>
+    <form [formGroup]="registerForm">
+      <div>
+        <label for="gardenSize">Tamaño del Huerto:</label>
+        <input
+          id="gardenSize"
+          formControlName="gardenSize"
+          type="text"
+          placeholder="Introduce el tamaño del huerto (ej. 10m²)"
+        />
+        <div *ngIf="registerForm.get('gardenSize')?.invalid && registerForm.get('gardenSize')?.touched" class="error">
+          Tamaño del huerto es requerido.
+        </div>
+      </div>
+      <div>
+        <label for="gardenLocation">Ubicación del Huerto:</label>
+        <input
+          id="gardenLocation"
+          formControlName="gardenLocation"
+          type="text"
+          placeholder="Introduce la ubicación del huerto (ej. Patio trasero)"
+        />
+        <div *ngIf="registerForm.get('gardenLocation')?.invalid && registerForm.get('gardenLocation')?.touched" class="error">
+          Ubicación del huerto es requerida.
+        </div>
+      </div>
+      <div>
+        <label for="selectedPlants">Selecciona las plantas a cultivar:</label>
+        <select id="selectedPlants" formControlName="selectedPlants" multiple>
+          <option *ngFor="let plant of plantTypes" [value]="plant">{{ plant }}</option>
+        </select>
+        <div *ngIf="registerForm.get('selectedPlants')?.invalid && registerForm.get('selectedPlants')?.touched" class="error">
+          Debes seleccionar al menos una planta.
+        </div>
+      </div>
+      <div class="button-container">
+        <button type="button" (click)="previousStep()">Anterior</button>
+        <button type="button" (click)="nextStep()">Siguiente</button>
+      </div>
+    </form>
+  </div>
+  

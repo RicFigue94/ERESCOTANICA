@@ -1,0 +1,96 @@
+.splash-screen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #ffffff; // Fondo blanco
+  background-image: url('../../../assets/plant-pattern.png'); // Patrón de plantas
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  .logo {
+    margin-bottom: 20px;
+
+    img {
+      max-width: 80%; // Ajustar tamaño en dispositivos móviles
+      height: auto;
+    }
+  }
+
+  .plant-animation {
+    margin-bottom: 30px;
+
+    img {
+      width: 80%; // Ajustar el tamaño según sea necesario
+      height: auto;
+    }
+  }
+
+  h1 {
+    color: #4c9f70; // Verde oscuro
+    font-size: 32px;
+    font-family: 'Montserrat', sans-serif;
+    margin: 10px 0;
+  }
+
+  p {
+    color: #333;
+    font-family: 'Roboto', sans-serif;
+    margin-bottom: 30px;
+  }
+
+  .button-container {
+    display: flex;
+    gap: 15px; // Espacio entre botones
+
+    button {
+      background-color: #4c9f70; // Verde oscuro
+      color: white;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-family: 'Cabin', sans-serif;
+      font-size: 16px;
+      transition: background-color 0.3s, transform 0.2s; // Transiciones suaves
+
+      &:hover {
+        background-color: #3f8b60; // Color más oscuro al pasar el mouse
+        transform: scale(1.05); // Efecto de aumento al pasar el mouse
+      }
+    }
+  }
+}
+
+/* Media queries para dispositivos móviles */
+@media (max-width: 480px) {
+  .splash-screen {
+    .logo {
+      img {
+        max-width: 90%; // Ajustar tamaño para móviles
+      }
+    }
+
+    .plant-animation {
+      img {
+        width: 90%; // Ajustar tamaño para móviles
+      }
+    }
+
+    h1 {
+      font-size: 24px; // Tamaño de fuente reducido
+    }
+
+    p {
+      font-size: 14px; // Tamaño de fuente reducido
+    }
+
+    .button-container {
+      button {
+        padding: 10px; // Reducir el padding en botones
+        font-size: 14px; // Tamaño de fuente más pequeño
+      }
+    }
+  }
+}

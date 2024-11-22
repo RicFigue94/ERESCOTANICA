@@ -1,0 +1,31 @@
+<div class="monitoring-container">
+    <h2>Monitoreo en Tiempo Real</h2>
+    
+    <div class="filter-container">
+      <button (click)="filterData('daily')" [class.active]="selectedPeriod === 'daily'">Diario</button>
+      <button (click)="filterData('weekly')" [class.active]="selectedPeriod === 'weekly'">Semanal</button>
+      <button (click)="filterData('monthly')" [class.active]="selectedPeriod === 'monthly'">Mensual</button>
+    </div>
+    
+    <div class="charts-container">
+      <div class="chart" id="humidity-chart">
+        <h3>Humedad</h3>
+        <p>{{ sensorData[sensorData.length - 1].humidity }}%</p>
+      </div>
+      <div class="chart" id="temperature-chart">
+        <h3>Temperatura</h3>
+        <p>{{ sensorData[sensorData.length - 1].temperature }}°C</p>
+      </div>
+      <div class="chart" id="light-chart">
+        <h3>Luz Solar</h3>
+        <p>{{ sensorData[sensorData.length - 1].light }}%</p>
+      </div>
+    </div>
+    
+    <div class="button-container">
+      <button (click)="redirectToRegister()">Registrar Planta</button>
+      <button (click)="redirectToDashboard()">Anterior</button>
+      <button (click)="redirectToCentralPanel()">Panel Central</button>
+    </div>
+  </div>
+  

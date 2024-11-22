@@ -1,0 +1,26 @@
+<div class="education-container">
+    <h2>Recursos Educativos</h2>
+    
+    <div class="filter-container">
+      <button (click)="filterGuides('Vegetales')">Vegetales</button>
+      <button (click)="filterGuides('Plantas de interior')">Plantas de interior</button>
+      <button (click)="filterGuides('Decoración')">Decoración</button>
+      <button (click)="filterGuides('')">Todos</button>
+    </div>
+    
+    <div class="guides-container">
+      <div
+        class="guide-card"
+        *ngFor="let guide of guides" 
+        [hidden]="selectedCategory && guide.category !== selectedCategory"
+        (click)="openGuide(guide.url)"> 
+        <img [src]="guide.imageUrl" alt="Guía" />
+        <h3>{{ guide.title }}</h3>
+        <p>{{ guide.summary }}</p>
+      </div>
+    </div>
+    
+    <div class="button-container">
+      <button (click)="redirectToCentralPanel()">Panel Central</button>
+    </div>
+</div>

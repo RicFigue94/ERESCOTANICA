@@ -1,0 +1,16 @@
+<div class="notifications-container">
+    <h2>Notificaciones y Recordatorios</h2>
+    
+    <div class="notifications-list">
+      <div class="notification-card" *ngFor="let notification of notifications">
+        <div class="notification-details">
+          <p>{{ notification.message }}</p>
+          <small>{{ notification.date }}</small>
+        </div>
+        <button class="dismiss-button" (click)="dismissNotification(notification.id)">❌</button>
+      </div>
+    </div>
+        <button class="go-to-panel-button" (click)="navigateToCentralPanel()">
+      Ir al Panel Central
+    </button>
+  </div>
